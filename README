@@ -1,7 +1,7 @@
-Toradex oe-core Setup
-=====================
+Toradex oe-core Setup with Mender
+=================================
 
-To simplify installation we provide a repo manifest which manages the different git repositories 
+To simplify installation we provide a repo manifest which manages the different git repositories
 and the used versions. (more on repo: http://code.google.com/p/git-repo/ )
 
 Install the repo bootstrap binary:
@@ -15,44 +15,46 @@ Create a directory for your oe-core setup to live in and clone the meta informat
 
   mkdir oe-core
   cd oe-core
-  repo init -u http://git.toradex.com/toradex-bsp-platform.git -b master
+  repo init -u git@gitlab.com:terberg-automotive/terberg-bsp-platform.git -b LinuxImageV2.8-terberg
   repo sync
 
 Optionally create a development branch in all git repositories
 
   repo start mybranch --all
 
-Source the file export to setup the environment. On first invocation this also copies a sample 
+Source the file export to setup the environment. On first invocation this also copies a sample
 configuration to build/conf/*.conf.
 
   . export
 
-Adapt build/conf/local.conf to your needs. At least check the variables BB_NUMBER_THREADS, 
-PARALLEL_MAKE, and MACHINE. Set MACHINE to a preferred value and when you need a different 
-one override it from the command line.
 
-For Toradex modules the following machines exist:
+Add the following to build/conf/local.conf
 
-  apalis-imx6
-  apalis-t30
-  colibri-imx6
-  colibri-imx7
-  colibri-t20
-  colibri-t30
-  colibri-vf50
+  MACHINE = "colibri-imx7-emmc"
 
-e.g. set in local.conf
+  # The name of the disk image and Artifact that will be built.
+  # This is what the device will report that it is running, and different updates must have different names
+  # because Mender will skip installation of an Artifact if it is already installed.
+  MENDER_ARTIFACT_NAME = "release-part-two"
 
-  MACHINE ?= "colibri-t30"
+  INHERIT += "mender-full"
 
-and then if you want to build for Apalis T30 instead, use the following command line:
+  PREFERRED_PROVIDER_u-boot-fw-utils ?= "u-boot-toradex-fsl-fw-utils"
+  PREFERRED_RPROVIDER_u-boot-fw-utils ?= "u-boot-toradex-fsl-fw-utils"
 
-  MACHINE=apalis-t30 bitbake angstrom-lxde-image
+  IMAGE_FSTYPES_append = " sdimg.gz"
 
-More information on our developer website:
+  IMAGE_FSTYPES_remove = "wic.gz teziimg"
 
-  http://developer.toradex.com/software-resources/arm-family/linux/board-support-package/openembedded-(core)
+  MENDER_STORAGE_TOTAL_SIZE_MB = "3072"
 
-For Toradex use:
-To generate a manifest from what is currently checked out:
-repo manifest -r -o manifest.xml
+  MENDER_DATA_PART_SIZE_MB = "400"
+
+  IMAGE_INSTALL_append = " kernel-image kernel-devicetree"
+
+To start build run:
+
+  bitbake console-tdx-image
+
+## Provisioning device
+

@@ -9,9 +9,9 @@
   <remote alias="repo" fetch="https://github.com/watatuki" name="githt"/>
   <remote alias="repo" fetch="https://git.toradex.com" name="tdx"/>
   <remote alias="repo" fetch="https://git.yoctoproject.org/git" name="yocto"/>
-  
+
   <default sync-j="4"/>
-  
+
   <project name="bitbake.git" path="layers/openembedded-core/bitbake" remote="oe" revision="8bd16328a9332c57b03198826e22b48fadcd21d9" upstream="1.36"/>
   <project name="meta-angstrom.git" path="layers/meta-angstrom" remote="githa" revision="4318892e08ea9102d29bdd92af83539bea985e4b" upstream="angstrom-v2017.12-rocko"/>
   <project name="meta-browser.git" path="layers/meta-browser" remote="githo" revision="af2f3e588f459093fb6211709a5210301d8d7dc6" upstream="master"/>
@@ -31,4 +31,6 @@
   <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="tdx" revision="4793c6737d73134a2e73da466e823ca65f53f969" upstream="rocko"/>
   <project name="meta-toradex-tegra.git" path="layers/meta-toradex-tegra" remote="tdx" revision="d7b2e3daf86a632ab92bb43eaa697a4c6b70ddae" upstream="rocko"/>
   <project name="openembedded-core.git" path="layers/openembedded-core" remote="oe" revision="f6f54155420ae54a34f1ab87e76623c536adf2f9" upstream="rocko"/>
+
+  <include name="mender.xml"/>
 </manifest>

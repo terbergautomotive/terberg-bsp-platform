@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <manifest>
+  <default sync-j="4"/>
+
+  <remote fetch="https://github.com/mirzak" name="mender"/>
+  <remote fetch="ssh://git@gitlab.com/terberg-automotive" name="terberg"/>
+
+  <project name="meta-mender" remote="mender" revision="rocko-toradex" path="layers/meta-mender"/>
+  <project name="meta-mender-terberg" remote="terberg" revision="rocko" path="layers/meta-mender-terberg"/>
+
+  </manifest>
