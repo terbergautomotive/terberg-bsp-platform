@@ -52,7 +52,8 @@ Prerequisite:
 - Colibri Evaluation V3.2B carrier board
 - Colibri iMX7D 1GB V1.1A SOM inserted in above
 - USB cable connected to console port (X27) and PC
-- USB cable connected to OTG USB port (X17) and PC
+- USB cable connected to OTG USB port (X29) and PC
+- Ethernet cable connected to RJ45 (X17) on same network as PC
 - [TFT server](https://help.ubuntu.com/community/TFTP) running on PC
 - Copy `u-boot.imx` and `Console-Image-colibri-imx7-emmc.sdimg.gz` to your TFT server directory
 
