@@ -2,7 +2,7 @@
   <manifest>
   <default sync-j="4"/>
 
-  <remote fetch="https://github.com/mirzak" name="mender"/>
+  <remote fetch="https://github.com/mendersoftware" name="mender"/>
   <remote fetch="ssh://git@gitlab.com/terberg-automotive" name="terberg"/>
 
   <project name="meta-mender" remote="mender" revision="rocko-toradex" path="layers/meta-mender"/>
