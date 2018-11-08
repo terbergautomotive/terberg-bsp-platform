@@ -17,7 +17,7 @@ Create a directory for your oe-core setup to live in and change location to it:
 
 Fetch the manifest file
 
-    repo init -u git@gitlab.com:terberg-automotive/terberg-bsp-platform.git -b LinuxImageV2.8-terberg
+    repo init -u git@github.com:terbergautomotive/terberg-bsp-platform.git -b LinuxImageV2.8-terberg
 
 Fetch meta information
 
