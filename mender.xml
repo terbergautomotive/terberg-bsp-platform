@@ -5,7 +5,7 @@
   <remote fetch="https://github.com/mendersoftware" name="mender"/>
   <remote fetch="https://github.com/terbergautomotive" name="terberg"/>
 
-  <project name="meta-mender" remote="mender" revision="rocko-toradex" path="layers/meta-mender"/>
+  <project name="meta-mender" remote="mender" revision="rocko" path="layers/meta-mender"/>
   <project name="meta-mender-terberg" remote="terberg" revision="rocko" path="layers/meta-mender-terberg"/>
 
   </manifest>
