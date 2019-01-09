@@ -66,7 +66,7 @@ You should be able to see a new USB device enumerate on the PC if it was success
 
 Clone `flash-utils`:
 
-    git clone git@gitlab.com:terberg-automotive/imx7-flash-utils.git
+    git clone https://github.com/terbergautomotive/imx7-flash-utils.git
 
 Change directory to `imx7-flash-utils`
 
