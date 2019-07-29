@@ -92,11 +92,11 @@ Setup convenience script to calculate number of blocks based on file size:
 
 Setup TFT server IP address in U-boot:
 
-    setenv serverip 192.168.128.122
+    setenv serverip 10.245.33.120
 
 Setup client IP address in U-boot:
 
-    setenv ipaddr 192.168.128.170
+    setenv ipaddr 10.245.33.128
 
 Transfer U-boot using TFTP and write to eMMC:
 
