@@ -105,6 +105,10 @@ Transfer U-boot using TFTP and write to eMMC:
 Transfer disk image to RAM using TFTP:
 
     tftpboot ${loadaddr} Console-Image-colibri-imx7-emmc.sdimg.gz
+    
+For an EMTCV2 use:
+    
+    tftpboot ${loadaddr} emtcv2.sdimg.gz
 
 Write disk image to eMMC:
 
