@@ -102,11 +102,11 @@ Transfer U-boot using TFTP and write to eMMC:
 
     tftpboot ${loadaddr} u-boot.imx && run set_blkcnt && mmc dev 0 1 && mmc write ${loadaddr} 2 ${blkcnt}
 
-Transfer disk image to RAM using TFTP:
+Transfer TRRGModem disk image to RAM using TFTP:
 
     tftpboot ${loadaddr} Console-Image-colibri-imx7-emmc.sdimg.gz
     
-For an EMTCV2 use:
+Transfer EMTCV2 disk image to RAM using TFTP:
     
     tftpboot ${loadaddr} emtcv2.sdimg.gz
 
